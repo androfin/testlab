@@ -1,0 +1,29 @@
+{
+  "name": "testlab-devsecops",
+  "version": "1.0.0",
+  "description": "Lab 5 Vulnerable Components and Secrets",
+  "private": true,
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "build": "echo \"no build step\"",
+    "test": "echo \"tests not implemented\"",
+    "lint": "echo \"lint not configured\""
+  },
+  "dependencies": {
+    "express": "4.16.1",
+    "lodash": "4.17.11",
+    "axios": "0.19.2",
+    "jsonwebtoken": "8.5.1",
+    "request": "2.88.2",
+    "leftpad": "0.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.0",
+    "eslint": "7.0.0"
+  }
+}

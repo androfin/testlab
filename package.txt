@@ -1,0 +1,53 @@
+{
+  "name": "testlab-devsecops",
+  "version": "1.0.0",
+  "description": "Lab 5 Vulnerable Components and Secrets",
+  "private": true,
+
+  "main": "src/server.js",
+
+  "engines": {
+    "node": ">=16"
+  },
+
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "build": "echo \"no build step\"",
+    "test": "echo \"tests not implemented\"",
+    "lint": "echo \"lint not configured\""
+  },
+
+  "dependencies": {
+
+    "express": "4.16.1",
+    // FIX: "express": "^4.19.2",
+
+    "lodash": "4.17.11",
+    // FIX: "lodash": "^4.17.21",
+
+    "axios": "0.19.2",
+    // FIX: "axios": "^1.7.9",
+
+    "jsonwebtoken": "8.5.1",
+    // FIX: "jsonwebtoken": "^9.0.2",
+
+    "request": "2.88.2",
+    // FIX: (remove this line completely, use axios instead)
+
+    "uuid": "3.3.2",
+    "moment": "2.24.0",
+    "debug": "4.1.1"
+  },
+
+  "devDependencies": {
+    "nodemon": "1.18.0",
+    "eslint": "7.0.0"
+  },
+
+  "metadata": {
+    "owner": "DevSecOps Team",
+    "purpose": "Teaching supply chain security and SCA",
+    "notes": "This file intentionally contains vulnerable dependencies"
+  }
+}
