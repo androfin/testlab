@@ -162,3 +162,5 @@ app.listen(config.app.port, config.app.host, () => {
   console.log("Listening on", `${config.app.host}:${config.app.port}`, "JWT=", config.auth.jwtSecret);
   // FIX: console.log("Listening on", `${config.app.host}:${config.app.port}`);
 });
+
+//

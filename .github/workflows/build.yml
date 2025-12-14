@@ -2,41 +2,30 @@ name: Build
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
+    types: [opened, synchronize, reopened]
 
 jobs:
   sonarqube:
     name: SonarCloud
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      pull-requests: read
-
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Run SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@9c9f8c8f3c1a1b5c8f0d9b0c6f1a2e3b4c5d6e7f
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      - name: Enforce Quality Gate
-        uses: SonarSource/sonarqube-quality-gate-action@5a1b2c3d4e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b
+      - name: Quality Gate
+        uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
         timeout-minutes: 5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Deploy
         if: github.ref == 'refs/heads/main' && success()
-        run: |
-          echo "Quality Gate passed"
+        run: echo "Deploy allowed"
